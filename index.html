@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food & Groceries. Discover the best restraurants. Swiggy it!</title>
+    <link rel="stylesheet" href="/css/swiggy-style.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.headContainer{
+    width: 100%;
+    height: 100%;
+    background-color: #ff5200;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items{
+    display: flex;
+    gap: 20px;
+    margin-right: 130px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+
+.nav-items span{
+    font-family: Gilroy;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    color: white;
+}
+
+.logo img{
+    margin-top: 40px;
+    margin-left: 110px;
+    width: 160px;
+    height: 50px;
+    cursor: pointer;
+}
+
+button[type="get-the-app-btn"]{
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    font-family: inherit;
+    font-weight: bold;
+    font-size:18.5px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 150px;
+}
+
+button[type="sign-in-btn"]{
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+    width: 130px;
+    border: none;
+    background-color: black;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header-images{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-image img{
+    height: 500px;
+}
+
+.right-image img{
+    height: 500px;
+}
+
+.heading-line{
+    margin-top: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#swiggy-it{
+    margin-left: 68px;
+}
+
+.location-input-box{
+    padding: 25px;
+    border-radius: 17px;
+    width: 300px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.search-input-box{
+    padding: 25px;
+    width: 350px;
+    border-radius: 17px;
+    border: none;
+    font-size: 15px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.heading-line input{
+    margin: 20px;
+    border: none;
+}
+
+.card-image{
+    height: 270px;
+    width: 270px;
+}
+
+.swiggy-cards{
+    display: flex;
+    margin-left: 85px;
+    margin-top: -200px;
+}
+
+.swiggy-body h2{
+    margin: 40px;
+    margin-left: 100px;
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.food-options img{
+    width: 200px;
+    height: 230px;
+}
+
+.swiggy-food-options-card{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    margin-left: 120px;
+    margin-right: 140px;
+    overflow-x: auto;
+}
+
+.swiggy-food-options-card::-webkit-scrollbar{
+    display: none;
+}
+
+.groceries-card-image{
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    gap: 30px;
+    margin-left: 120px;
+    margin-right: 140px;
+    overflow-x: auto;
+}
+
+.groceries-card-image::-webkit-scrollbar{
+    display: none;
+}
+
+.instamart-card-img img{
+    width: 155px;
+    height: 170px;
+}
+
+.discover h2{
+    margin: 40px;
+    margin-left: 100px;
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.dineout-cards{
+    display: grid;
+    grid-template-columns:repeat(6,1fr);
+    overflow-x: auto;
+    gap: 20px;
+    margin-right: 140px;
+    margin-left: 120px;
+}
+
+.dineout-cards::-webkit-scrollbar{
+    display: none;
+}
+
+.dineout-card-header img{
+    width: 320px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.dineout-card-body{
+    color: rgb(90, 87, 87);
+    margin-top: 10px;
+}
+
+.dineout-card-body p{
+    margin-bottom: 10px;
+}
+
+.dineout-card-footer{
+    margin-top: 10px;
+}
+
+button[type="prebooking-btn"]{
+    padding: 10px;
+    width: 100%;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgb(27, 166, 114);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+button[type="bank-offer-btn"]{
+    color: rgb(66, 179, 73);
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    margin-left: 2px;
+    border: none;
+    background-color: rgb(149, 231, 201);
+    text-align: left;
+    border-radius: 12px;
+}
+
+.app-now-img img{
+    width: 100%;
+    margin-top: 80px;
+}
+
+.cities-with-food-delivery h2{
+    margin-top: 80px;
+    margin-left: 170px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.boxes{
+    margin-left: 170px;
+    margin-right: 17%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.para{
+    width: 190px;
+    height: 70px;
+    text-align: center;
+    margin-top: 10px;   
+    font-size: 15px;
+    border: 1.5px solid gray;
+    border-radius: 15px;
+}
+
+.para p{
+    margin-top: 15px;
+}
+
+.para2{
+    width: 190px;
+    height: 70px;
+    text-align: center;
+    margin-top: 15px;   
+    font-size: 15px;
+    border: 1.5px solid gray;
+    border-radius: 15px;
+}
+
+.para2 p{
+    color: #ff5200;
+    margin-top: 22px;
+    margin-left: 13px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.swiggy-footer2{
+    background-color: rgb(240, 240, 245);
+    width: 100%;
+    margin-top: 40px;
+}
+
+.swiggy-footer{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-left: 165px;
+    margin-right: 175px;
+}
+
+.inner-footer{
+    margin-top: 60px;
+}
+
+.inner-footer ul{
+    list-style: none;
+    color: rgb(81, 77, 77);
+}
+
+.inner-footer ul>li{
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.legal{
+    padding-top: 30px;
+}
+
+.lower-footer-content{
+    margin-bottom: 30px;
+    background-color: rgb(81, 77, 77);
+    width: 100%;
+}
+
+.final-content{
+    margin-left: 820px;
+    margin-top:  20px;
+    position: absolute;
+    width: 100%;
+}
+
+.final-content a,a{
+    margin-top: 20px;
+}
+
+.final-content a:hover{
+    transform: scale(1.3);
+    transition: all 0.5s ease;
+}
+
+
+.lower-footer-content span{
+    margin-top: 10px;
+    margin-left: 120px;
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: inherit;
+    position: absolute;
+}
+    </style>
+</head>
+<body>
+    <div class="headContainer">
+        <div class="header">
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dutdah0l9/image/upload/v1720058694/Swiggy_logo_bml6he.png" alt="Swiggy Logo">
+            </div>
+            <div class="nav-items">
+                <span>Swiggy Corporate</span>
+                <span>Partner with us</span>
+                <button type="get-the-app-btn">Get the App <span class="bi bi-arrow-up-right"></span></button>
+                <button type="sign-in-btn">Sign in</button>
+            </div>
+        </div>
+
+        <div class="header-images">
+            <div class="left-image">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Veggies_new.png" alt="">
+            </div>
+
+            <div class="heading-line">
+                <h1>Order food & groceries. Discover </h1>
+                <h1 id="swiggy-it">best restraurants. Swiggy it!</h1>
+                <input class="location-input-box" type="text" placeholder="Enter your delivery location">
+                <input class="search-input-box" type="text" placeholder="search for restraurants, item or more">
+            </div>
+
+            <div class="right-image">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/testing/seo-home/Sushi_replace.png" alt="">
+            </div>
+        </div>
+
+        <div class="swiggy-cards">
+            <div class="card">
+                <a href="https://www.swiggy.com/restaurants"><img class="card-image" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/8/1/fa01e85b-3057-482d-9523-5289722b1df2_Food4BU.png" alt=""></a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.swiggy.com/instamart?entryId=1234&entryName=mainTileEntry4&v=1"><img class="card-image" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/8/16/ca34e375-f1bd-4a2e-a3e7-0a20833be83b_IM4BU1.png" alt=""></a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.swiggy.com/swiggy-dineout"><img class="card-image" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/8/1/76c30e5a-8adb-4795-bf5b-fa64e9e9e1d3_DO4BU.png" alt=""></a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.swiggy.com/genie"><img class="card-image" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/31/14033c0b-8907-420b-b72a-d26cfa68dc7b_Genie4BU.png" alt=""></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="swiggy-body">
+        <h2>Order our best food options</h2>
+        <div class="swiggy-food-options-card">
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pizza.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Shake.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Biryani.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pasta.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Burger.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pav%20Bhaji.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Poori.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chinese.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pure%20Veg.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Rolls.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Kebab.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Dosa.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Noodles.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Paratha.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Rasmalai.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chole%20Bhature.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Salad.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Cake.png" alt="">
+            </div>
+            <div class="food-options">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Idli.png" alt="">
+            </div>
+        </div>
+        
+        <!-- Groceries on Instamart -->
+        <div class="groceries-on-instamart">
+            <h2>Shop groceries on Instamart</h2>
+            <div class="groceries-card-image">
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/ef6d7392cc14c4e55fd32508a8b8b80b" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2024/3/8/44ee874e-181c-4c2e-93b0-6a94db3259d8_e2a24168-319e-4ace-9a8e-595d5c3f8e96" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/ab38f15e14167c60760a14496cf3e76e" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/6df3d88f57458695636156c8a6482a08" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/18172800a99ee7ef0cc1b19517963303" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/09f78bff636a9c056f866a635f11ec7b" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/329204b8d264d0e92838cc6bff9fc737" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/ce7510a89fd3b7c9f59051498995e3a5" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/37ed14af07d3a25f76d5b0ec64fcc922" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/d113e476185a8537f200eaa464cf33c7" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/a9cb16dfe5e589cc9a967e54efe785dd" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/680d275508ac23c15e7e4ace1968a18c" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/aeaf40fc5313509f74ef86a7c43b3641" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/e5326637846b12a93a31497392eeb07d" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/f019adeeb5249fa73f56e09d8350b7ea" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/9ae9c5aeb3dc1cc7c5a4b2822281fe58" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/316b56fdf54c92e41c8668c840aba068" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/1a51b613d073efc8898e2079fe7fcf96" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/a312feaf33c92758a74cb06307e216a6" alt="">
+                </div>
+    
+                <div class="instamart-card-img">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/11fda65dbd49ba11a656938641ec2af8" alt="">
+                </div>
+            </div>
+            </div>
+        </div>   
+
+        <!-- Discover best restaurants on Dineout -->
+        <div class="discover">
+            <h2>Discover best restaurants on Dineout</h2>
+            <div class="dineout-cards">
+                <div class="first-card">
+                    <div class="dineout-card-header">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660758506/gmao2lav2r8ed5fqyacw.jpg" alt="">
+                    </div>
+                    <div class="dineout-card-body">
+                        <p><span>Chinese • North Indian</span><span style="margin-left: 76px;" >₹2200 for two</span></p>
+                        <p><span style="font-size: 15px;">La Place Sarovar Portico, Hazratganj...</span><span style="margin-left: 185px;">4.8 km</span></p>
+                        <span class="bi bi-calendar" style="font-size: 15px;">Table Booking</span>
+                    </div>
+                    <div class="dineout-card-footer">
+                        <button type="prebooking-btn"><span class="bi bi-percent"></span>&nbsp; Flat 30% off on pre-booking <span style="margin-left: 45px;">+3 more</span></button>
+                        <button type="bank-offer-btn">Up to 15% off  with bank offers </button>
+                    </div>
+                </div>
+
+                <div class="first-card">
+                    <div class="dineout-card-header">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1661592887/rqu1ksbb5jtpwp0scnko.jpg" alt="">
+                    </div>
+                    <div class="dineout-card-body">
+                        <p><span>Chinese • North Indian</span><span style="margin-left: 76px;" >₹2500 for two</span></p>
+                        <p><span style="font-size: 15px;">The Regnant, Nirala Nagar, Lucknow</span><span style="margin-left: 185px;">3.5 km</span></p>
+                        <span class="bi bi-calendar" style="font-size: 15px;">Table Booking</span>
+                    </div>
+                    <div class="dineout-card-footer">
+                        <button type="prebooking-btn"><span class="bi bi-percent"></span>&nbsp; Flat 35% off on pre-booking <span style="margin-left: 45px;">+2 more</span></button>
+                        <button type="bank-offer-btn">Up to 15% off  with bank offers </button>
+                    </div>
+                </div>
+
+                <div class="first-card">
+                    <div class="dineout-card-header">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660758506/gmao2lav2r8ed5fqyacw.jpg" alt="">
+                    </div>
+                    <div class="dineout-card-body">
+                        <p><span>Chinese • North Indian</span><span style="margin-left: 76px;" >₹2200 for two</span></p>
+                        <p><span style="font-size: 15px;">La Place Sarovar Portico, Hazratganj...</span><span style="margin-left: 185px;">4.8 km</span></p>
+                        <span class="bi bi-calendar" style="font-size: 15px;">Table Booking</span>
+                    </div>
+                    <div class="dineout-card-footer">
+                        <button type="prebooking-btn"><span class="bi bi-percent"></span>&nbsp; Flat 30% off on pre-booking <span style="margin-left: 45px;">+3 more</span></button>
+                        <button type="bank-offer-btn">Up to 15% off  with bank offers </button>
+                    </div>
+                </div>
+
+                <div class="first-card">
+                    <div class="dineout-card-header">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660758506/gmao2lav2r8ed5fqyacw.jpg" alt="">
+                    </div>
+                    <div class="dineout-card-body">
+                        <p><span>Chinese • North Indian</span><span style="margin-left: 76px;" >₹2200 for two</span></p>
+                        <p><span style="font-size: 15px;">La Place Sarovar Portico, Hazratganj...</span><span style="margin-left: 185px;">4.8 km</span></p>
+                        <span class="bi bi-calendar" style="font-size: 15px;">Table Booking</span>
+                    </div>
+                    <div class="dineout-card-footer">
+                        <button type="prebooking-btn"><span class="bi bi-percent"></span>&nbsp; Flat 30% off on pre-booking <span style="margin-left: 45px;">+3 more</span></button>
+                        <button type="bank-offer-btn">Up to 15% off  with bank offers </button>
+                    </div>
+                </div>
+
+                <div class="first-card">
+                    <div class="dineout-card-header">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660758506/gmao2lav2r8ed5fqyacw.jpg" alt="">
+                    </div>
+                    <div class="dineout-card-body">
+                        <p><span>Chinese • North Indian</span><span style="margin-left: 76px;" >₹2200 for two</span></p>
+                        <p><span style="font-size: 15px;">La Place Sarovar Portico, Hazratganj...</span><span style="margin-left: 185px;">4.8 km</span></p>
+                        <span class="bi bi-calendar" style="font-size: 15px;">Table Booking</span>
+                    </div>
+                    <div class="dineout-card-footer">
+                        <button type="prebooking-btn"><span class="bi bi-percent"></span>&nbsp; Flat 30% off on pre-booking <span style="margin-left: 45px;">+3 more</span></button>
+                        <button type="bank-offer-btn">Up to 15% off  with bank offers </button>
+                    </div>
+                </div>
+
+                <div class="first-card">
+                    <div class="dineout-card-header">
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660758506/gmao2lav2r8ed5fqyacw.jpg" alt="">
+                    </div>
+                    <div class="dineout-card-body">
+                        <p><span>Chinese • North Indian</span><span style="margin-left: 76px;" >₹2200 for two</span></p>
+                        <p><span style="font-size: 15px;">La Place Sarovar Portico, Hazratganj...</span><span style="margin-left: 185px;">4.8 km</span></p>
+                        <span class="bi bi-calendar" style="font-size: 15px;">Table Booking</span>
+                    </div>
+                    <div class="dineout-card-footer">
+                        <button type="prebooking-btn"><span class="bi bi-percent"></span>&nbsp; Flat 30% off on pre-booking <span style="margin-left: 45px;">+3 more</span></button>
+                        <button type="bank-offer-btn">Up to 15% off  with bank offers </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="app-now-img">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/seo/App_download_banner.png" alt="">
+        </div>
+
+        <!-- Cities with food delivery -->
+        <div class="cities-with-food-delivery">
+            <h2>Cities with food delivery</h2>
+            <div class="boxes">
+                <div class="para">
+                    <p>Order food online in <br>Banglore</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br>Gurgaon</p>
+                </div>
+
+
+                <div class="para">
+                    <p>Order food online in <br>Lucknow</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br>Mumbai</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br>Chennai</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br> Hydrabad</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in  <br> Delhi</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br> Kanpur</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br>Ahemdabad</p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in <br> Jaipur </p>
+                </div>
+
+                <div class="para">
+                    <p>Order food online in  <br> Goa </p>
+                </div>
+
+                <div class="para2">
+                    <p>Show more <span class="bi bi-arrow-down"></span></p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Cities with grocery delivery -->
+        <div class="cities-with-food-delivery">
+            <h2>Cities with food delivery</h2>
+            <div class="boxes">
+                <div class="para">
+                    <p>Order grocery delivery in <br>Banglore</p>
+                </div>
+
+                <div class="para">
+                    <p> Order grocery delivery in  <br>Gurgaon</p>
+                </div>
+
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br>Lucknow</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br>Mumbai</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br>Chennai</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br> Hydrabad</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br> Delhi</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br> Kanpur</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br>Ahemdabad</p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br> Jaipur </p>
+                </div>
+
+                <div class="para">
+                    <p>Order grocery delivery in  <br> Goa </p>
+                </div>
+
+                <div class="para2">
+                    <p>Show more <span class="bi bi-arrow-down"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiggy-footer2">
+        <div class="swiggy-footer">
+            <div class="inner-footer">
+                <img src="https://media-assets.swiggy.com/portal/testing/seo-home/Group.svg" alt="">
+                <p style="color: rgb(51, 50, 50);">© 2024 Swiggy Limited</p>
+            </div>
+            <div class="inner-footer">
+                <ul>
+                    <li style="color: black;"><b>Company</b></li>
+                    <li>About Us</li>
+                    <li>Swiggy Corporate</li>
+                    <li>Careers</li>
+                    <li>Team</li>
+                    <li>Swiggy One</li>
+                    <li>Swiggy Instamart</li>
+                    <li>Swiggy Dineout</li>
+                    <li>Swiggy Genie</li>
+                    <li>Minis</li>
+                </ul>
+            </div>
+            <div class="inner-footer">
+                <div class="contact-us">
+                    <ul>
+                        <li style="color: black;"><b>Contact us</b></li>
+                        <li>Help & Support</li>
+                        <li>Partner with us</li>
+                        <li>Ride with us</li>
+                    </ul>
+                </div>
+    
+    
+                <div class="legal">
+                    <ul>
+                        <li style="color: black;"><b>Legal</b></li>
+                        <li>Terms & Conditions</li>
+                        <li>Cookie Policy</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="inner-footer">
+                <ul>
+                    <li style="color: black;"><b>Available in:</b></li>
+                    <li>bangalore</li>
+                    <li>gurgaon</li>
+                    <li>hyderabad</li>
+                    <li>delhi</li>
+                    <li>mumbai</li>
+                    <li>pune</li>
+                </ul>
+            </div>
+            <div class="inner-footer">
+                <div class="life-at-swiggy">
+                    <ul>
+                        <li style="color: black;"><b>Life at Swiggy</b></li>
+                        <li>Explore with Swiggy</li>
+                        <li>Swiggy News</li>
+                        <li>Snackables</li>
+                    </ul>
+                </div>
+    
+                <div class="social-links">
+                    <p style="color: black;"><b>Social links</b></p>
+                    <a href=""><img src="https://media-assets.swiggy.com/portal/testing/seo-home/Linkedin.svg" alt=""></a>
+                    <a href=""><img src="https://media-assets.swiggy.com/portal/testing/seo-home/icon-instagram.svg" alt=""></a>
+                    <a href=""><img src="https://media-assets.swiggy.com/portal/testing/seo-home/icon-facebook.svg" alt=""></a>
+                    <a href=""><img src="https://media-assets.swiggy.com/portal/testing/seo-home/icon-pinterest.svg" alt=""></a>
+                    <a href=""><img src="https://media-assets.swiggy.com/portal/testing/seo-home/Twitter.svg" alt=""></a>
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="lower-footer-content">
+            <hr>
+            <span>For better experience, download the Swiggy app now</span>
+            <div class="final-content">
+                <a href="https://itunes.apple.com/in/app/id989540920?referrer=utm_source%3Dswiggy%26utm_medium%3Dhomepage"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv" alt=""></a>
+                <a href="https://play.google.com/store/apps/details?id=in.swiggy.android&referrer=utm_source%3Dswiggy%26utm_medium%3Dheader&pli=1"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
